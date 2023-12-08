@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% include 'cdlines.html' %}
+    <title>studentform</title>
+</head>
+<body>
+    <h2>Enter student details</h2>
+
+    <div class="container">
+        <div class="row">
+            <div class="col col-md-6">
+                <form action="{% url 'save_update_data' sd.id %}"method="post">{% csrf_token %}
+                    <label for="">Enter firstname</label>
+                    <input type="text" name="fname" value="{{sd.fname}}" class="form-control">
+                    <label for="">Enter lastname</label>
+                    <input type="text" name="lname" value="{{sd.lname}}" class="form-control">
+                    <label for="">Enter email</label>
+                    <input type="email" name="email" value="{{sd.email}}" class="form-control">
+                    <label for="">Enter mobile</label>
+                    <input type="number" name="mobile" value="{{sd.mobile}}" class="form-control">
+                    <label for="">Enter mark1</label>
+                    <input type="number" name="mark1" value="{{sd.mark1}}"  class="form-control">
+                    
+                    <label for="">Enter mark2</label>
+                    <input type="number" name="mark2" value="{{sd.mark2}}" class="form-control">
+                    <label for="">Enter mark3</label>
+                    <input type="number" name="mark3" value="{{sd.mark3}}" class="form-control">
+                    <label for="">Enter mark4</label>
+                    <input type="number" name="mark4" value="{{sd.mark4}}" class="form-control">
+
+                    <center><input type="submit" value="submit" class="btn btn-primary">
+                        <input type="reset" value="cancel" class="btn btn-danger"></center>
+                    
+            
+                </form>
+
+            </div>
+        </div>
+        
+    </div>
+    
+    
+</body>
+</html>
